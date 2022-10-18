@@ -1,0 +1,15 @@
+D:\repos\trabalho-grafos\bin\Debug\net6.0\trabalho-grafos.exe
+D:\repos\trabalho-grafos\bin\Debug\net6.0\trabalho-grafos.deps.json
+D:\repos\trabalho-grafos\bin\Debug\net6.0\trabalho-grafos.runtimeconfig.json
+D:\repos\trabalho-grafos\bin\Debug\net6.0\trabalho-grafos.dll
+D:\repos\trabalho-grafos\bin\Debug\net6.0\trabalho-grafos.pdb
+D:\repos\trabalho-grafos\obj\Debug\net6.0\trabalho-grafos.csproj.AssemblyReference.cache
+D:\repos\trabalho-grafos\obj\Debug\net6.0\trabalho-grafos.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\trabalho-grafos\obj\Debug\net6.0\trabalho-grafos.AssemblyInfoInputs.cache
+D:\repos\trabalho-grafos\obj\Debug\net6.0\trabalho-grafos.AssemblyInfo.cs
+D:\repos\trabalho-grafos\obj\Debug\net6.0\trabalho-grafos.csproj.CoreCompileInputs.cache
+D:\repos\trabalho-grafos\obj\Debug\net6.0\trabalho-grafos.dll
+D:\repos\trabalho-grafos\obj\Debug\net6.0\refint\trabalho-grafos.dll
+D:\repos\trabalho-grafos\obj\Debug\net6.0\trabalho-grafos.pdb
+D:\repos\trabalho-grafos\obj\Debug\net6.0\trabalho-grafos.genruntimeconfig.cache
+D:\repos\trabalho-grafos\obj\Debug\net6.0\ref\trabalho-grafos.dll
