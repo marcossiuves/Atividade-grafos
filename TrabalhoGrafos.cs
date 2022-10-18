@@ -17,9 +17,15 @@
 
             Console.WriteLine("Grafo A");
             Console.WriteLine(grafoA.grauToString());
+            Console.WriteLine("Numero de vertices: {0} ", grafoA.numVertices);
+            Console.WriteLine("Numero de arestas: {0} ", grafoA.numArestas);
+
 
             Console.WriteLine("Grafo B");
             Console.WriteLine(grafoB.grauToString());
+            Console.WriteLine("Numero de vertices: {0} ", grafoB.numVertices);
+            Console.WriteLine("Numero de arestas: {0} ", grafoB.numArestas);
+
 
         }
     }

@@ -44,9 +44,22 @@ namespace trabalhoGrafos
             return grau;
         }
 
-        public int CalcularArestas(){
-            int 
-            for()
+        public int CalcularArestas(int[,] grafo, int numVertices)
+        {
+
+            int arestas = 0;
+
+            for (int i = 0; i < numVertices; i++)
+            {
+                for (int j = 0; j < numVertices; j++)
+                {                   
+                    if(grafo[i,j] == 1 && (grafo[i,j] == grafo[j,i])){
+                        arestas ++ ;
+                    }
+                }
+            }
+
+            return arestas/2;
 
 
         }
