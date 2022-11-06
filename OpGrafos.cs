@@ -1,10 +1,27 @@
 namespace trabalhoGrafos
 {
+
+    using util;
     class OpGrafos
     {
+        PilhaDinamica P;
+        bool[] marcado;
+        int[] antecessor;
+        int numVertices;
 
-        public void isIsomophic(Grafo A, Grafo B)
+        public OpGrafos()
         {
+            this.P = new PilhaDinamica();
+            this.marcado = new bool[10];
+            this.antecessor = new int[10];
+            this.numVertices = 10;
+        }
+        public OpGrafos(int numVertices)
+        {
+            this.P = new PilhaDinamica();
+            this.marcado = new bool[numVertices];
+            this.antecessor = new int[numVertices];
+            this.numVertices = numVertices;
 
         }
         public int[] calcularGrau(int[,] grafo, int numVertice)
@@ -44,7 +61,7 @@ namespace trabalhoGrafos
             return grau;
         }
 
-        public int CalcularArestas(int[,] grafo, int numVertices)
+        public int calcularArestas(int[,] grafo, int numVertices)
         {
 
             int arestas = 0;
@@ -52,18 +69,59 @@ namespace trabalhoGrafos
             for (int i = 0; i < numVertices; i++)
             {
                 for (int j = 0; j < numVertices; j++)
-                {                   
-                    if(grafo[i,j] == 1 && (grafo[i,j] == grafo[j,i])){
-                        arestas ++ ;
+                {
+                    if (grafo[i, j] == 1 && (grafo[i, j] == grafo[j, i]))
+                    {
+                        arestas++;
                     }
                 }
             }
 
-            return arestas/2;
-
+            return arestas / 2;
 
         }
 
-    }
+        public void buscaEmProfundidade(int[,] grafo, int v = 0)
+        {
 
+            marcado[v] = true;
+
+            for (int w = 0; w < this.numVertices; w++)
+            {
+                if (!marcado[w])
+                {
+                    antecessor[w] = v;
+                    DFS(w);
+                }
+
+            }
+
+        }
+
+
+        public void DFS(int v)
+        {
+
+            int w;
+            marcado[v] = true;
+
+            P.empilhar(v);
+
+            while (!P.vazia())
+            {
+                w = (int)P.desempilhar();
+
+                for (int z = 0; z < numVertices; z++)
+                {
+                    marcado[z] = true;
+                    P.empilhar(z);
+                }
+
+                Console.WriteLine(w);
+            }
+        }
+    }
 }
+
+
+

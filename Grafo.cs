@@ -15,7 +15,7 @@ namespace trabalhoGrafos
 
             this.grafo = grafo;
             this.numVertices = (int)Math.Sqrt(grafo.Length);
-            this.numArestas = op.CalcularArestas(grafo, numVertices);
+            this.numArestas = op.calcularArestas(grafo, numVertices);
             this.grau = op.calcularGrau(grafo, numVertices);
         }
 

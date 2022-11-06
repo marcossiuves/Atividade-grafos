@@ -11,6 +11,8 @@
             int[,] grafoa = modelos.alimentarGrafoA();
             int[,] grafob = modelos.alimentarGrafoB();
 
+            OpGrafos op = new OpGrafos();
+
             Grafo grafoA = new Grafo(grafoa);
             Grafo grafoB = new Grafo(grafob);
 
@@ -26,6 +28,7 @@
             Console.WriteLine("Numero de vertices: {0} ", grafoB.numVertices);
             Console.WriteLine("Numero de arestas: {0} ", grafoB.numArestas);
 
+            op.buscaEmProfundidade(grafoa);
 
         }
     }
