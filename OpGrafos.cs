@@ -5,16 +5,12 @@ namespace trabalhoGrafos
     class OpGrafos
     {
 
-        int[] antecessor;
         int numVertices;
-        int[,] vGraph;
         Grafo G;
 
         public OpGrafos(Grafo g)
         {
-            this.antecessor = new int[numVertices];
             this.numVertices = g.numVertices;
-            vGraph = new int[numVertices, numVertices];
             G = g;
         }
 

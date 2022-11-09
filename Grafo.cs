@@ -6,7 +6,6 @@ namespace trabalhoGrafos
         public int[] grau { get; set; }
         public int numVertices { get; set; }
         public int numArestas { get; set; }
-        private int [,] matrizAdjacencia;
 
         public Grafo(int[,] grafo)
         {
