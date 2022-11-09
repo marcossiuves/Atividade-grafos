@@ -1,0 +1,21 @@
+
+
+ void DFSUtil(int v, bool[] visited)
+        {
+            for (int i = 0; i < numVertices; i++)
+            {
+                for (int n = 0; n < i; n++)
+                {
+                    visited[n] = true;
+                    if (!visited[n] && (Graph[i, n] == 1))
+                        DFSUtil(n, visited);
+                    Console.Write(i + " ");
+                }
+            }
+        }
+
+        public void DFS(int v)
+        {
+            bool[] visited = new bool[3];
+            DFSUtil(v, visited);
+        }

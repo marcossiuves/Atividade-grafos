@@ -4,122 +4,46 @@ namespace trabalhoGrafos
     using util;
     class OpGrafos
     {
-        PilhaDinamica P;
-        bool[] marcado;
+
         int[] antecessor;
         int numVertices;
+        int[,] vGraph;
+        Grafo G;
 
-        public OpGrafos()
+        public OpGrafos(Grafo g)
         {
-            this.P = new PilhaDinamica();
-            this.marcado = new bool[10];
-            this.antecessor = new int[10];
-            this.numVertices = 10;
-        }
-        public OpGrafos(int numVertices)
-        {
-            this.P = new PilhaDinamica();
-            this.marcado = new bool[numVertices];
             this.antecessor = new int[numVertices];
-            this.numVertices = numVertices;
-
+            this.numVertices = g.numVertices;
+            vGraph = new int[numVertices, numVertices];
+            G = g;
         }
-        public int[] calcularGrau(int[,] grafo, int numVertice)
+
+
+        public void buscaEmProfundidade(int v)
         {
 
-            int[] grau = new int[numVertice];
+            bool[] marcado = new bool[numVertices];
 
-            int aux_grau = 0;
-            int aux_vertice = 0;
-
-
-            for (int i = 0; i < numVertice; i++)
-            {
-                for (int j = 0; j < numVertice; j++)
-                {
-                    // calcular grauB do grafoA
-                    if (grafo[i, j] == 1)
-                    {
-                        aux_grau++;
-                        if (grafo[i, j] == grafo[j, i])
-                        {
-                            aux_vertice++;
-                        }
-
-                    }
-                    else if (grafo[i, j] == 2)
-                    {
-                        aux_grau += grafo[i, j];
-                    }
-
-                }
-                grau[i] = aux_grau;
-                aux_grau = 0;
+            DFS(v, marcado);
 
 
-            }
-            return grau;
         }
 
-        public int calcularArestas(int[,] grafo, int numVertices)
+        //arrumar para funcionar com a pilha...
+        private void DFS(int v, bool[] marcados)
         {
 
-            int arestas = 0;
+            marcados[v] = true;
+            Console.Write(v + " ");
 
-            for (int i = 0; i < numVertices; i++)
-            {
-                for (int j = 0; j < numVertices; j++)
-                {
-                    if (grafo[i, j] == 1 && (grafo[i, j] == grafo[j, i]))
-                    {
-                        arestas++;
-                    }
+            int [,] visitados = G.grafo;
+            for(int i = 0; i < G.numVertices; i++){
+                if(!marcados[i]){
+                    DFS(i, marcados);
                 }
             }
-
-            return arestas / 2;
-
         }
 
-        public void buscaEmProfundidade(int[,] grafo, int v = 0)
-        {
-
-            marcado[v] = true;
-
-            for (int w = 0; w < this.numVertices; w++)
-            {
-                if (!marcado[w])
-                {
-                    antecessor[w] = v;
-                    DFS(w);
-                }
-
-            }
-
-        }
-
-
-        public void DFS(int v)
-        {
-
-            int w;
-            marcado[v] = true;
-
-            P.empilhar(v);
-
-            while (!P.vazia())
-            {
-                w = (int)P.desempilhar();
-
-                for (int z = 0; z < numVertices; z++)
-                {
-                    marcado[z] = true;
-                    P.empilhar(z);
-                }
-
-                Console.WriteLine(w);
-            }
-        }
     }
 }
 
