@@ -12,14 +12,17 @@
             int[,] grafob = modelos.alimentarGrafoB();
             int[,] grafoc = modelos.alimentarGrafoC();
             int[,] grafocusto = modelos.grafoComCusto();
+            int[,] grafomaximo = modelos.grafoMaximo();
 
             Grafo grafoA = new Grafo(grafoa);
             Grafo grafoB = new Grafo(grafob);
             Grafo grafoC = new Grafo(grafoc);
             Grafo grafoCusto = new Grafo(grafocusto);
+            Grafo grafoMaximo = new Grafo(grafomaximo);
 
 
-            OpGrafos op = new OpGrafos(grafoCusto);
+
+            OpGrafos op = new OpGrafos(grafoMaximo);
 
             // Console.WriteLine("Grafo A");
             // Console.WriteLine(grafoA.grauToString());
@@ -36,8 +39,10 @@
 
             //Console.WriteLine(op.dijkstra(0));
 
-            op.kruskal();
+            //op.kruskal();
 
+
+            Console.WriteLine("O maior caminho possivel é: " + op.fulkerson(0,5));
         }
     }
 }
