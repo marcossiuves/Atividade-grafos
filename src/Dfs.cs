@@ -1,5 +1,4 @@
 using trabalhoGrafos;
-using util;
 
 namespace OperacoesGrafo
 {
@@ -10,14 +9,11 @@ namespace OperacoesGrafo
 
         int numVertices;
         Grafo G;
-        PilhaDinamica p;
 
         public Dfs(Grafo g)
         {
             this.numVertices = g.numVertices;
             G = g;
-            p = new PilhaDinamica();
-
         }
 
         public void buscaEmProfundidade(int v)

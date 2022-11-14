@@ -1,5 +1,4 @@
 ﻿using OperacoesGrafo;
-using util;
 
 namespace trabalhoGrafos
 {
