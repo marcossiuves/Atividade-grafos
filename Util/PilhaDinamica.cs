@@ -3,7 +3,7 @@ namespace util
     class PilhaDinamica
     {
         private Celula topo;
-        private int contador;
+        private int contador { set; get; }
 
 
         public PilhaDinamica()
@@ -32,7 +32,7 @@ namespace util
 
         public object desempilhar()
         {
-            object x = null;
+            object? x = null;
             if (vazia())
             {
                 Console.WriteLine("Erro: Pilha vazia!");
@@ -72,13 +72,15 @@ namespace util
             PilhaDinamica tempPilha = new PilhaDinamica();
             PilhaDinamica copiaPilha = new PilhaDinamica();
 
-            while(! vazia()){
-                tempPilha.empilhar( desempilhar() );
+            while (!vazia())
+            {
+                tempPilha.empilhar(desempilhar());
             }
 
-            while (!tempPilha.vazia()){
+            while (!tempPilha.vazia())
+            {
                 object x = tempPilha.desempilhar();
-                empilhar (x);
+                empilhar(x);
                 copiaPilha.empilhar(x);
             }
             return copiaPilha;

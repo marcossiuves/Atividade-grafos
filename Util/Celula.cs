@@ -3,10 +3,10 @@ namespace util
     class Celula
     {
 
-        public object item {get; set;}
-        public Celula anterior;
+        public object ? item {get; set;}
+        public Celula ? anterior;
 
-        public Celula(){
+        public Celula (){
             this.item = null;
             this.anterior = null;        
         }
